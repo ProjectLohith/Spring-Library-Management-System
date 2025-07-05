@@ -1,56 +1,81 @@
-# ✅ Library Management System – Spring Boot-Based Scalable Backend Application
-This is a full-fledged, scalable Library Management System built using Spring Boot, showcasing enterprise-level design principles with features like layered architecture, DTO mapping, custom repositories, exception handling, and Redis integration.
+# 📚 Library Management System – High-Level Project Overview
+This project is a **Spring Boot-based backend application** that powers a **Library Management System**. It is designed to manage the core operations of a library such as handling users, books, authors, and transactions in a clean, modular, and scalable way.
 
-**🔍 Key Features:**
+The system is built using Java, following a layered architecture with separate components for controllers, services, repositories, DTOs, mappers, and models. The project demonstrates how real-world backend applications are structured and secured using modern Spring ecosystem tools.
 
-📚 CRUD operations for books, users, authors, and transactions.
+<br>
 
-✅ Custom business logic for borrowing/returning books, along with transaction status tracking using enums.
+### **✅ Features:**
 
-🔄 Role-based access & user types (e.g., Student, Faculty) implemented via enums for fine-grained control.
+**🧾 User Management:** Add and manage library users (e.g., Students, Admins) with status and role control.
 
-🔐 Integrated custom annotation-based logging using Spring AOP (@LogAnnotation) for transparent request logging.
+**📘 Book & Author Management:** Handles adding, updating, and tracking books and authors with metadata and relationships.
 
-🧩 Modular layers: controller, service, DTO, mapper, and repository for clean separation of concerns.
+**🔄 Transaction System:** Issue and return books with proper transaction tracking (e.g., ISSUED, RETURNED).
 
-**🧠 Advanced Spring Features Used:**
+**🔐 Role-Based Security:** Access control for sensitive endpoints using Spring Security (e.g., only STUDENT can issue, ADMIN can return).
 
-💡 Aspect-Oriented Programming (AOP) for cross-cutting concerns like logging.
+**🧠 Custom Logging:** Logs important actions using annotation-based AOP with @LogAnnotation.
 
-🛠️ Custom Repositories (CustomBookRepository, CustomBookRepositoryImpl) for complex DB queries.
+**🚨 Exception Handling:** Centralized error handling via @ControllerAdvice for consistent API responses.
 
-🧾 Exception Handling via centralized @ControllerAdvice.
+**⚡ Caching with Redis:** Caches frequently accessed data like books and users to enhance performance.
 
-⚙️ Redis Integration (RedisDataRepository) for caching and high-speed access to book/user data.
+**✅ Input Validation:** Ensures reliable and clean input data using spring-boot-starter-validation.
 
-🧱 DTOs and Mappers to decouple domain logic from request/response payloads and enhance maintainability.
+**🧪 Testing Support:** Supports unit and integration testing with Spring Boot Test and JUnit.
 
-**🛠 Tech Stack:**
+**📁 Layered Architecture:** Clean modular design using Controllers, Services, DTOs, Mappers, Repositories, and Enums.
 
-Backend: Java, Spring Boot, Spring AOP, Spring Data JPA
+<br>
 
-Database: MySQL (or PostgreSQL)
+### **🛠 Tech Stack:**
 
-Caching: Redis
+**🧑‍💻 Language:** Java 21
 
-Build Tool: Maven
+**⚙️ Framework:** Spring Boot
 
-Other: Lombok, JPA, SLF4J, Swagger (if added), RESTful APIs
+**🛢 Database:** MySQL (Primary), H2 (In-memory for local/testing)
 
-**📁 Project Structure Highlights:**
+**🔗 ORM:** Spring Data JPA
 
-controller/ → REST endpoints for books, users, transactions
+**🔐 Security:** Spring Security (Role-based access control)
 
-dto/ → Clean input contracts for POST requests
+**⚡ Caching:** Redis (via Spring Data Redis)
 
-mapper/ → Entity-DTO transformation logic
+**🔧 Build Tool:** Maven
 
-repository/ → Standard & custom JPA repositories + Redis
+**📦 Others:** Lombok, Bean Validation, Spring Boot Test, JUnit
 
-enums/ → Book types, transaction status, user roles
+<br>
 
-annotations/ + service/CustomAspect.java → Logging AOP
+### 📁 Codebase Structure (High-Level Overview)
 
-exceptions/ → Custom domain exceptions
+The project follows a clean layered architecture, ensuring separation of concerns, maintainability, and scalability — aligned with industry best practices for Spring Boot backend applications.
 
-resources/application.properties → Configuration
+| Module/Package              | Purpose                                                                                      |
+|----------------------------|----------------------------------------------------------------------------------------------|
+| `controller/`              | Contains all REST API endpoints for users, books, authors, and transactions.                |
+| `dto/`                     | Defines request models used for clean data transfer between client and server.     |
+| `model/`                   | Represents the core domain entities like Book, User, Transaction, and Author.               |
+| `repository/`              | Interfaces for database access using Spring Data JPA, including custom repositories and Redis integration. |
+| `service/`                 | Implements business logic, Redis configuration, Spring Security, and custom AOP logic.       |
+| `mapper/`                  | Converts between DTOs and entity models to keep layers decoupled.                           |
+| `exceptions/`              | Houses custom exception classes.                              |
+| `enums/`                   | Defines constants for types, roles, and status codes used across the application.            |
+| `annotations/`             | Includes custom annotations like `@LogAnnotation` for aspect-oriented logging.               |
+| `resources/`               | Configuration files including `application.properties` for DB, Redis, and app settings.      |
+| `SpringMinorApplication.java` | Entry point of the Spring Boot application.                                                |
+
+
+<br>
+
+### **🎯 What This Project Demonstrates**
+
+* 🚀 Backend API Development: Built scalable RESTful APIs using Spring Boot following industry-standard practices.
+* 🔗 Spring Ecosystem Proficiency: Integrated core Spring modules including Spring Security, Spring AOP, Spring Data JPA, Redis, and Validation.
+* 🏗 Clean Architecture: Applied layered architecture with Controllers, Services, Repositories, DTOs, Mappers, and Exception handling.
+* 🧠 Advanced Concepts: Implemented custom annotations, role-based access, transaction workflows, and Redis caching to simulate real production systems.
+* ⚙️ Real-World Backend Design: Structured the project to be modular, extensible, and testable — reflecting enterprise-grade backend engineering principles.
+* ✅ Modern Java Development: Built using Java 21, following modern coding conventions and leveraging latest language features where applicable.
+
